@@ -1227,7 +1227,7 @@ QByteArray QUaEventHistoryQueryData::toByteArray(const QUaEventHistoryQueryData&
 	outStream.setVersion(QDataStream::Qt_5_6);
 #else
 	QDataStream outStream(&byteArray, QIODeviceBase::OpenMode( QIODeviceBase::WriteOnly | QIODeviceBase::Truncate) );
-	outStream.setVersion(QDataStream::Qt_6_3);
+	outStream.setVersion(QDataStream::Qt_6_2);
 #endif
 	outStream.setByteOrder(QDataStream::BigEndian);
 	outStream << inQueryData;
@@ -1245,7 +1245,7 @@ QUaEventHistoryQueryData QUaEventHistoryQueryData::fromByteArray(const QByteArra
 #if (QT_VERSION < QT_VERSION_CHECK(6,0,0))
 	inStream.setVersion(QDataStream::Qt_5_6);
 #else
-	inStream.setVersion(QDataStream::Qt_6_3);
+	inStream.setVersion(QDataStream::Qt_6_2);
 #endif
 	inStream.setByteOrder(QDataStream::BigEndian);
 	inStream >> outQueryData;
@@ -1260,7 +1260,7 @@ QByteArray QUaEventHistoryQueryData::ContinuationToByteArray(const QUaEventHisto
 	outStream.setVersion(QDataStream::Qt_5_6);
 #else
 	QDataStream outStream(&byteArray, QIODeviceBase::OpenMode( QIODeviceBase::WriteOnly | QIODeviceBase::Truncate) );
-	outStream.setVersion(QDataStream::Qt_6_3);
+	outStream.setVersion(QDataStream::Qt_6_2);
 #endif
 	outStream.setByteOrder(QDataStream::BigEndian);
 	outStream << inContinuation;
@@ -1278,7 +1278,7 @@ QUaEventHistoryContinuationPoint QUaEventHistoryQueryData::ContinuationFromByteA
 #if (QT_VERSION < QT_VERSION_CHECK(6,0,0))
 	inStream.setVersion(QDataStream::Qt_5_6);
 #else
-	inStream.setVersion(QDataStream::Qt_6_3);
+	inStream.setVersion(QDataStream::Qt_6_2);
 #endif
 	inStream.setByteOrder(QDataStream::BigEndian);
 	inStream >> outContinuation;
